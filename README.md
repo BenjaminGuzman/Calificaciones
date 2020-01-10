@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+# Calificaciones
 
 Calificaciones es un sencillo programa para calcular rápidamente la calificación en base a determinado puntaje obtenido sobre un puntaje máximo.
 
