@@ -5,7 +5,6 @@ import io.calificaciones.gui.Alerts;
 
 import java.awt.Font;
 import java.awt.FontFormatException;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -13,7 +12,7 @@ public final class Fonts {
     public static Font GO_REGULAR_26, GO_REGULAR_BOLD_70, GO_REGULAR_20, GO_REGULAR_15;
 
     static {
-        final String GO_FONT_PATH = "fonts" + File.separatorChar + "Go-Regular.ttf";
+        final String GO_FONT_PATH = "/resources/fonts/Go-Regular.ttf";
         try (InputStream fontIS = Fonts.class.getResourceAsStream(GO_FONT_PATH)) {
             final Font GO_REGULAR = Font.createFont(Font.TRUETYPE_FONT, fontIS);
             Fonts.GO_REGULAR_15 = GO_REGULAR.deriveFont(15f);
