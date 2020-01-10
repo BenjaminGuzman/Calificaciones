@@ -17,9 +17,9 @@
         <properties>
           <background color="-16777216"/>
           <foreground color="-657931"/>
-          <icon value="resources/icons/outline_picture_as_pdf_white_18dp.png"/>
-          <text value="Exportar a PDF"/>
-          <toolTipText value="Crear un PDF con esta tabla"/>
+          <icon value="resources/icons/outline_print_white_18dp.png"/>
+          <text value="Imprimir"/>
+          <toolTipText value="Imprimir la tabla (Se puede crear un PDF)"/>
         </properties>
       </component>
       <grid id="ac7f5" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

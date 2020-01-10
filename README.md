@@ -1,37 +1,43 @@
 ## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/BenjaminGuzman/Calificaciones/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Calificaciones es un sencillo programa para calcular rápidamente la calificación en base a determinado puntaje obtenido sobre un puntaje máximo.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Muy útil para calificar exámenes rápidamente.
 
-### Markdown
+Cuenta con los siguientes features:
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Cálculo de la calificación
 
-```markdown
-Syntax highlighted code block
+El punto principal de la aplicación. Ingresa el número de aciertos obtenidos y el máximo y automáticamente se mostrará la calificación obtenida.
 
-# Header 1
-## Header 2
-### Header 3
+![Image](img/inicio.png "Inicio")
 
-- Bulleted
-- List
+## Tabla de calificaciones
 
-1. Numbered
-2. List
+Genera una tabla con los aciertos posibles y su correspondiente calificación. Tiene la opción de imprimir por si se requiere su uso posterior.
 
-**Bold** and _Italic_ and `Code` text
+![Image](img/tablas.png "Tablas")
 
-[Link](url) and ![Image](src)
-```
+El proyecto es libre, si crees necesario puedes contribuir en GitHub.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/BenjaminGuzman/Calificaciones/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+## Instalación en Windows
 
-### Support or Contact
+- Descarga `windows.zip` de los https://github.com/BenjaminGuzman/Calificaciones/releases.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- (Opcional) Verifica que las firmas (checksums) correspondan, si no sabes cómo hacer esto, puedes omitir este paso.
+
+- Descomprime `windows.zip` en cualquier directorio.
+
+- Entra al directorio donde descomprimiste el zip y ejecuta `installer.ps1`. Si surge algún error, presiona `Win+R` y escribe `powershell`, se abrira una ventana, adentro escribe `Set-ExecutionPolicy -Scope CurrentUser Unresticted` y vuelve a ejecutar `installer.ps1`.
+
+- Si todo salió bien deberá existir un shorcut en el escritorio de nombre _Calificaciones_, y lo puedes ejecutar para correr el programa.
+
+- El programa quedará instalado en el directorio `%HOMEPATH%\Calificaciones`.
+
+**Nota**: después de ejecutar el comando `Set-ExecutionPolicy -Scope CurrentUser Unresticted` es recomendable ejecutar `Set-ExecutionPoliy -Scope CurrentUser Restricted` para deshacer los cambios.
+
+#### Desinstalación
+
+Se debe realizar lo mismo que en la instalación, pero en vez de ejecutar `installer.ps1` se debe ejecutar `uninstaller.ps1`. En este caso no importa desde qué directorio se ejecute.
