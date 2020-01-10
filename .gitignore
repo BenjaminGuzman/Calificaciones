@@ -1,6 +1,8 @@
 # IDEA
 .idea/
 out/
+create_sums.sh
+dist_zips/
 
 # Compiled class file
 *.class
