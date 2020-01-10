@@ -3,6 +3,7 @@
 out/
 create_sums.sh
 dist_zips/
+dist.sh
 
 # Compiled class file
 *.class
