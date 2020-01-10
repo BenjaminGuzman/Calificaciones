@@ -1,5 +1,11 @@
 # Calificaciones
 
+[GitHub Pages](https://benjaminguzman.github.io/Calificaciones/)
+
+https://benjaminguzman.github.io/Calificaciones/
+
+
+
 Calificaciones es un sencillo programa para calcular rápidamente la calificación en base a determinado puntaje obtenido sobre un puntaje máximo.
 
 Muy útil para calificar exámenes rápidamente.
@@ -19,8 +25,6 @@ Genera una tabla con los aciertos posibles y su correspondiente calificación. T
 ![Image](img/tablas.png "Tablas")
 
 El proyecto es libre, si crees necesario puedes contribuir en GitHub.
-
-
 
 ## Instalación en Windows
 
