@@ -49,8 +49,11 @@ public class App extends JFrame {
         this.setMaximumSize(new Dimension(1000, 600));
         this.setPreferredSize(initialWindowDimensions);
 
+        this.setTitle("Calificaciones");
+        this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setIconImage(new ImageIcon(this.getClass().getResource("/resources/icons/grades.jpg")).getImage());
 
         // create IndexPanel after JFrame, at the end of this method it will be added to this.mainPanel
         AppPanel indexPanel = new IndexPanel();
