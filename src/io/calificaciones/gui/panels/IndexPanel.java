@@ -130,7 +130,7 @@ public class IndexPanel extends AppPanel {
             return;
         }
 
-        if (pointsString.isEmpty() || pointsString.isBlank())
+        if (pointsString.isEmpty())
             return;
 
         this.maxScore = Float.parseFloat(pointsString);

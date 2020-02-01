@@ -56,7 +56,7 @@ public class SettingsPanel extends AppPanel {
             e.printStackTrace();
             return;
         }
-        if (maxScoreString.isEmpty() || maxScoreString.isBlank())
+        if (maxScoreString.isEmpty())
             return;
 
         App.setDefaultScore(Float.parseFloat(maxScoreString));
@@ -71,7 +71,7 @@ public class SettingsPanel extends AppPanel {
             e.printStackTrace();
             return;
         }
-        if (baseString.isEmpty() || baseString.isBlank())
+        if (baseString.isEmpty())
             return;
 
         App.setBasePercent(Integer.parseInt(baseString));
