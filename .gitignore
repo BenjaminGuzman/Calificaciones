@@ -5,6 +5,9 @@ create_sums.sh
 dist_zips/
 dist.sh
 
+#design
+src/Calificaciones\ GitHub\ Pages.*
+
 # Compiled class file
 *.class
 

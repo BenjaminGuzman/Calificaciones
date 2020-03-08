@@ -1,5 +1,6 @@
 package io.calificaciones.gui.components;
 
+
 import io.calificaciones.listeners.DocumentUpdateHandler;
 import io.calificaciones.validators.InputRegexFilter;
 
@@ -12,6 +13,7 @@ import java.util.regex.Pattern;
 
 public class NumberSpinner {
     private PlainDocument document;
+    private JSpinner.NumberEditor editor;
 
     public JSpinner createJSpinner(SpinnerNumberModel spinnerNumberModel, Pattern regex, DocumentUpdateHandler.UpdateHandler updateHandler, Font font) {
         JSpinner spinner = new JSpinner(spinnerNumberModel);
@@ -19,7 +21,9 @@ public class NumberSpinner {
         final InputRegexFilter inputRegexFilter = new InputRegexFilter(regex, 6);
 
         this.document = this.createSpinnerDocument(inputRegexFilter, updateHandler);
-        spinner.setUI(new BlackSpinnerUI(new JSpinner.NumberEditor(spinner), this.document, font));
+        this.editor = new JSpinner.NumberEditor(spinner);
+        spinner.setEditor(this.editor);
+        spinner.setUI(new BlackSpinnerUI(this.editor, this.document, font, spinner));
 
         return spinner;
     }
@@ -37,17 +41,21 @@ public class NumberSpinner {
      * @param updateHandler    lambda expression to execute when input field changes
      * @return the new PlainDocument
      */
-    private PlainDocument createSpinnerDocument(final InputRegexFilter inputRegexFilter, final DocumentUpdateHandler.UpdateHandler updateHandler) {
+     private PlainDocument createSpinnerDocument(final InputRegexFilter inputRegexFilter, final DocumentUpdateHandler.UpdateHandler updateHandler) {
         // create PlainDocument with regex filter to suppress non-digit characters
         PlainDocument document = new PlainDocument() {
+            private InputRegexFilter filter;
             @Override
             public DocumentFilter getDocumentFilter() {
-                return inputRegexFilter.setDocument(this);
+                if (filter == null)
+                    filter = inputRegexFilter.setDocument(this);
+                return filter;
             }
         };
 
         // Create DocumentListener that will trigger updateHandler if input is valid
         final DocumentUpdateHandler.Builder builder = new DocumentUpdateHandler.Builder()
+                .setEditor(this.editor)
                 .onInsertHandler(updateHandler)
                 .onRemoveHandler(updateHandler);
 

@@ -20,8 +20,6 @@ public class Main {
         System.setProperty("awt.useSystemAAFontSettings", "on");
         Main.setLogger();
 
-
-
         Main.setLookAndFeel();
 
         SwingUtilities.invokeLater(() -> {
