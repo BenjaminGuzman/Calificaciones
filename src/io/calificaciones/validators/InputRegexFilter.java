@@ -27,13 +27,15 @@ public final class InputRegexFilter extends DocumentFilter {
     @Override
     public void insertString(final FilterBypass fb, final int offset, final String string, final AttributeSet attr) throws BadLocationException {
         // bypass only if the document and the string does not exceed maxLength and the string corresponds the the regex
-        if (this.document.getLength() + string.length() <= this.maxLength && this.regex.matcher(this.document.getText(0, this.document.getLength()) + string).matches())
+        if (offset + string.length() <= this.maxLength && this.regex.matcher(this.document.getText(0, offset) + string).matches())
             fb.insertString(offset, string, attr);
     }
     @Override
     public void replace(final FilterBypass fb, final int offset, final int length, final String text, final AttributeSet attrs) throws BadLocationException {
         // bypass only if the document and the string does not exceed maxLength and the string corresponds the the regex
-        if (this.document.getLength() + text.length() <= this.maxLength && this.regex.matcher(this.document.getText(0, this.document.getLength()) + text).matches())
+        String text2Replace = this.document.getText(offset, length);
+        String remainingText = this.document.getText(0, this.document.getLength()).replace(text2Replace, "");
+        if (remainingText.length() + text.length() <= this.maxLength && this.regex.matcher(remainingText + text).matches())
             fb.replace(offset, length, text, attrs);
     }
     @Override

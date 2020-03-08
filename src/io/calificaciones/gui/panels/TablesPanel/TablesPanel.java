@@ -132,7 +132,7 @@ public class TablesPanel extends AppPanel {
             // TODO: handle exception, how?
             return;
         }
-        if (maxPointsStr.isEmpty() || maxPointsStr.isBlank())
+        if (maxPointsStr.isEmpty())
             return;
 
         this.maxScore = Math.round(Float.parseFloat(maxPointsStr));

@@ -43,7 +43,7 @@ public class App extends JFrame {
         this.add(this.rootPanel);
         this.pack();
 
-        Dimension initialWindowDimensions = new Dimension(700, 500);
+        Dimension initialWindowDimensions = new Dimension(800, 500);
 
         this.setMinimumSize(initialWindowDimensions);
         this.setMaximumSize(new Dimension(1000, 600));

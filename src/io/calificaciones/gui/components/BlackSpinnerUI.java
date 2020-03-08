@@ -1,5 +1,6 @@
 package io.calificaciones.gui.components;
 
+import io.calificaciones.gui.App;
 import io.calificaciones.gui.constants.Colors;
 import io.calificaciones.listeners.FocusBorderChanger;
 
@@ -7,21 +8,26 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import javax.swing.plaf.basic.BasicSpinnerUI;
+import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
+import java.text.ParseException;
 
 public class BlackSpinnerUI extends BasicSpinnerUI {
     private final JSpinner.DefaultEditor editor;
     private final Font font;
     private final Document document;
+    private final JSpinner spinner;
 
-    public BlackSpinnerUI(JSpinner.DefaultEditor editor, Document document, Font font) {
+    public BlackSpinnerUI(JSpinner.DefaultEditor editor, Document document, Font font, JSpinner spinner) {
         this.editor = editor;
         this.document = document;
         this.font = font;
+        this.spinner = spinner;
     }
 
     /**
@@ -52,13 +58,37 @@ public class BlackSpinnerUI extends BasicSpinnerUI {
     @Override
     protected Component createNextButton() {
         BlackButton.Builder builder = new BlackButton.Builder("▲").normalFgColor(Colors.DEEP_PURPLE);
-        return new BlackButton(builder);
+        BlackButton button = new BlackButton(builder);
+        button.addActionListener((ActionEvent evt) -> {
+            Object nextValue = this.spinner.getModel().getNextValue();
+            if (nextValue != null)
+                try {
+                    this.document.remove(0, this.document.getLength());
+                    this.document.insertString(0, App.SCORE_NUMBER_FORMAT.format(nextValue), null);
+                    this.editor.commitEdit();
+                } catch (BadLocationException | ParseException e) {
+                    e.printStackTrace();
+                }
+        });
+        return button;
     }
 
     @Override
     protected Component createPreviousButton() {
         BlackButton.Builder builder = new BlackButton.Builder("▼").normalFgColor(Colors.DEEP_PURPLE);
-        return new BlackButton(builder);
+        BlackButton button = new BlackButton(builder);
+        button.addActionListener((ActionEvent evt) -> {
+            Object prevValue = this.spinner.getModel().getPreviousValue();
+            if (prevValue != null)
+                try {
+                    this.document.remove(0, this.document.getLength());
+                    this.document.insertString(0, App.SCORE_NUMBER_FORMAT.format(prevValue), null);
+                    this.editor.commitEdit();
+                } catch (BadLocationException | ParseException e) {
+                    e.printStackTrace();
+                }
+        });
+        return button;
     }
 
     @Override

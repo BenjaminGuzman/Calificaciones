@@ -1,19 +1,14 @@
 package io.calificaciones.gui.panels;
 
 import io.calificaciones.AppPanel;
-import io.calificaciones.Main;
-import io.calificaciones.gui.Alerts;
 import io.calificaciones.gui.App;
 import io.calificaciones.gui.components.NumberSpinner;
 import io.calificaciones.gui.constants.Colors;
 import io.calificaciones.gui.constants.Fonts;
 import io.calificaciones.gui.constants.RegEx;
-import io.calificaciones.listeners.DocumentUpdateHandler;
-import io.calificaciones.validators.InputRegexFilter;
 
 import javax.swing.*;
 import javax.swing.text.BadLocationException;
-import javax.swing.text.DocumentFilter;
 import javax.swing.text.PlainDocument;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -47,17 +42,8 @@ public class IndexPanel extends AppPanel {
         this.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         // set default values
-        try {
-            final String maxPointsStr = String.valueOf(Math.round(this.maxScore));
-            this.maxScoreDocument.insertString(0, maxPointsStr, null);
-            this.scoreDocument.insertString(0, maxPointsStr, null);
-        } catch (BadLocationException e) {
-            Main.LOGGER.severe("Error occurred while trying to set default values in IndexPanel.java");
-            Main.LOGGER.severe(e.toString());
-            Main.LOGGER.severe(e.getMessage());
-            Main.LOGGER.severe(e.getLocalizedMessage());
-            Alerts.showErrorOccurred();
-        }
+        this.spinnerMaxScore.setValue((double)this.maxScore);
+        this.spinnerScore.setValue((double)this.maxScore);
     }
 
     @Override
@@ -82,7 +68,7 @@ public class IndexPanel extends AppPanel {
     private void createUIComponents() {
         NumberSpinner numberScoreSpinner = new NumberSpinner();
         this.spinnerScore = numberScoreSpinner.createJSpinner(
-                new SpinnerNumberModel(1, 0, 999, 1),
+                new SpinnerNumberModel(1.0, 0.0, 999.0, 1.0),
                 RegEx.DECIMAL_3_INT_2_FLOAT,
                 this::updateScore,
                 Fonts.GO_REGULAR_BOLD_70);
@@ -90,30 +76,11 @@ public class IndexPanel extends AppPanel {
 
         NumberSpinner numberMaxScoreSpinner = new NumberSpinner();
         this.spinnerMaxScore = numberMaxScoreSpinner.createJSpinner(
-                new SpinnerNumberModel(1, 0, 999, 1),
+                new SpinnerNumberModel(1.0, 0.0, 999.0, 1.0),
                 RegEx.DECIMAL_3_INT_2_FLOAT,
                 this::updateMaxScore,
                 Fonts.GO_REGULAR_26);
         this.maxScoreDocument = numberMaxScoreSpinner.getDocument();
-    }
-
-    private PlainDocument createSpinnerDocument(final InputRegexFilter inputRegexFilter, final DocumentUpdateHandler.UpdateHandler updateHandler) {
-        // create PlainDocument with regex filter to suppress non-digit characters
-        PlainDocument document = new PlainDocument() {
-            @Override
-            public DocumentFilter getDocumentFilter() {
-                return inputRegexFilter.setDocument(this);
-            }
-        };
-
-        // Create DocumentListener that will trigger updateHandler if input is valid
-        final DocumentUpdateHandler.Builder builder = new DocumentUpdateHandler.Builder()
-                .onInsertHandler(updateHandler)
-                .onRemoveHandler(updateHandler);
-
-        document.addDocumentListener(new DocumentUpdateHandler(builder));
-
-        return document;
     }
 
     /**
@@ -130,7 +97,7 @@ public class IndexPanel extends AppPanel {
             return;
         }
 
-        if (pointsString.isEmpty() || pointsString.isBlank())
+        if (pointsString.isEmpty())
             return;
 
         this.maxScore = Float.parseFloat(pointsString);
