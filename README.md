@@ -6,15 +6,15 @@ https://benjaminguzman.github.io/Calificaciones/
 
 
 
-Calificaciones es un sencillo programa para calcular rápidamente la calificación en base a determinado puntaje obtenido sobre un puntaje máximo.
+Calificaciones es un sencillo programa para calcular rápidamente la calificación con base en un determinado puntaje obtenido sobre un puntaje máximo.
 
-Muy útil para calificar exámenes rápidamente.
+**Muy útil para calificar exámenes rápidamente**.
 
-Cuenta con los siguientes features:
+Cuenta con los siguientes features
 
 ## Cálculo de la calificación
 
-El punto principal de la aplicación. Ingresa el número de aciertos obtenidos y el máximo y automáticamente se mostrará la calificación obtenida.
+El punto principal de la aplicación. Ingresa el número de aciertos obtenidos y el máximo, automáticamente se mostrará la calificación obtenida.
 
 ![Image](img/inicio.png "Inicio")
 
