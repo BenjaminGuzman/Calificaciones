@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="dev.benjaminguzman.gui.panels.IndexPanel">
+  <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="5" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="586" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-14606047"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="4fb71" class="javax.swing.JSpinner" binding="spinnerMaxScore" custom-create="true">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <font name="Quicksand" size="26" style="0"/>
+          <foreground color="-657931"/>
+          <toolTipText value="Número máximo de aciertos"/>
+        </properties>
+      </component>
+      <component id="394bb" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Lato" size="24" style="0"/>
+          <foreground color="-2039584"/>
+          <text value="Calificación"/>
+        </properties>
+      </component>
+      <component id="9c008" class="javax.swing.JLabel" binding="warningLabel">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Quicksand" size="36" style="0"/>
+          <foreground color="-16725933"/>
+          <text value="Excelso!!"/>
+        </properties>
+      </component>
+      <component id="ca6b0" class="javax.swing.JLabel" binding="labelScore">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Go" size="82" style="0"/>
+          <foreground color="-328966"/>
+          <text value="10"/>
+        </properties>
+      </component>
+      <component id="8f361" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="4" hsize-policy="4" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Lato" size="24" style="0"/>
+          <foreground color="-2039584"/>
+          <text value="Aciertos obtenidos"/>
+        </properties>
+      </component>
+      <component id="546a2" class="javax.swing.JSpinner" binding="spinnerScore" custom-create="true">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="4" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-16777216"/>
+          <font name="Quicksand Medium" size="72" style="0"/>
+          <foreground color="-657931"/>
+          <toolTipText value="Aciertos obtenidos"/>
+        </properties>
+      </component>
+      <component id="cdffc" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Cantarell" size="20" style="0"/>
+          <foreground color="-2039584"/>
+          <text value="Número máximo de aciertos:"/>
+        </properties>
+      </component>
+      <vspacer id="adc69">
+        <constraints>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <vspacer id="eb055">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="b2fe8" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Montserrat Medium" size="14"/>
+          <foreground color="-1118482"/>
+          <horizontalAlignment value="0"/>
+          <horizontalTextPosition value="0"/>
+          <text value="calificación = (aciertos) / (máx. aciertos) * base"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
