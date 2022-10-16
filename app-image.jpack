@@ -1,0 +1,7 @@
+--verbose
+--name Calificaciones
+--input target/Calificaciones-1.1.jar
+--type app-image
+--icon target/classes/resources/icons/grades.png
+--module-path target/Calificaciones-1.1.jar
+--module Calificaciones/dev.benjaminguzman.Main
