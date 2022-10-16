@@ -1,16 +1,12 @@
 # Calificaciones
 
-[GitHub Pages](https://benjaminguzman.github.io/Calificaciones/)
-
-https://benjaminguzman.github.io/Calificaciones/
-
-
+[GitHub Pages](https://benjaminguzman.github.io/Calificaciones)
 
 Calificaciones es un sencillo programa para calcular rápidamente la calificación con base en un determinado puntaje obtenido sobre un puntaje máximo.
 
 **Muy útil para calificar exámenes rápidamente**.
 
-Cuenta con los siguientes features
+Cuenta con las siguientes características:
 
 ## Cálculo de la calificación
 
@@ -26,30 +22,28 @@ Genera una tabla con los aciertos posibles y su correspondiente calificación. T
 
 El proyecto es libre, si crees necesario puedes contribuir en GitHub.
 
-## Instalación en Windows
+## Instalación
 
-- Descarga `windows.zip` de los https://github.com/BenjaminGuzman/Calificaciones/releases.
+### Windows
 
-- (Opcional) Verifica que las firmas (checksums) correspondan, si no sabes cómo hacer esto, puedes omitir este paso.
+1. Descarga el instalador `Calificaciones-\<VERSION>.exe` de https://github.com/BenjaminGuzman/Calificaciones/releases 
+(\<VERSION> indica una versión en formato #.#.#)
 
-- Descomprime `windows.zip` en cualquier directorio.
+2. Ejecuta el instalador 
 
-- Entra al directorio donde descomprimiste el zip y ejecuta `installer.ps1`. Si surge algún error, presiona `Win+R` y escribe `powershell`, se abrira una ventana, adentro escribe `Set-ExecutionPolicy -Scope CurrentUser Unresticted` y vuelve a ejecutar `installer.ps1`.
+### MacOS y GNU/Linux
 
-- Si todo salió bien deberá existir un shortcut en el escritorio de nombre _Calificaciones_, y lo puedes ejecutar para correr el programa.
+TODO...
 
-- El programa quedará instalado en el directorio `%HOMEPATH%\Calificaciones`.
+### Otra plataforma
 
-**Nota**: después de ejecutar el comando `Set-ExecutionPolicy -Scope CurrentUser Unresticted` es recomendable ejecutar `Set-ExecutionPoliy -Scope CurrentUser Restricted` para deshacer los cambios.
-
-#### Desinstalación
-
-Se debe realizar lo mismo que en la instalación, pero en vez de ejecutar `installer.ps1` se debe ejecutar `uninstaller.ps1`. En este caso no importa desde qué directorio se ejecute.
+Dentro de https://github.com/BenjaminGuzman/Calificaciones/releases se provee también el archivo `Calificaciones-\<VERSION>.jar`
+que puede ser ejecutado directamente en cualquier computadora que tenga instalado Java 17.
 
 ## Compilación
 
 Debido a que, por simplicidad y agilidad, se usó la herramienta de diseño de IntelliJ, la aplicación se debe compilar
-desde IntelliJ (se debe construir el artefacto, la configuración ya está incluida en [`.idea`](.idea))
+desde IntelliJ (se debe construir el artefacto, la configuración ya está incluida en el directorio [`.idea`](.idea))
 
 Después de obtener el `jar` se debe empaquetar con jpackage usando ya sea la configuración [`app-image.jpack`](app-image.jpack)
-o [`exe.jpack`](exe.jpack) (`jpackage @exe.jpack`)
+o [`exe.jpack`](exe.jpack) (e.g. `jpackage @exe.jpack`)
