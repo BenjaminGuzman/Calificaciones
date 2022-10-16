@@ -1,7 +1,8 @@
 --verbose
 --name Calificaciones
---input target/Calificaciones-1.1.jar
+--app-version 1.1
+--input out/artifacts
 --type app-image
---icon target/classes/resources/icons/grades.png
---module-path target/Calificaciones-1.1.jar
+--icon src/main/resources/icons/grades.png
+--module-path out/artifacts/Calificaciones.jar
 --module Calificaciones/dev.benjaminguzman.Main

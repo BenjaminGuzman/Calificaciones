@@ -36,7 +36,7 @@ El proyecto es libre, si crees necesario puedes contribuir en GitHub.
 
 - Entra al directorio donde descomprimiste el zip y ejecuta `installer.ps1`. Si surge algún error, presiona `Win+R` y escribe `powershell`, se abrira una ventana, adentro escribe `Set-ExecutionPolicy -Scope CurrentUser Unresticted` y vuelve a ejecutar `installer.ps1`.
 
-- Si todo salió bien deberá existir un shorcut en el escritorio de nombre _Calificaciones_, y lo puedes ejecutar para correr el programa.
+- Si todo salió bien deberá existir un shortcut en el escritorio de nombre _Calificaciones_, y lo puedes ejecutar para correr el programa.
 
 - El programa quedará instalado en el directorio `%HOMEPATH%\Calificaciones`.
 
@@ -45,3 +45,11 @@ El proyecto es libre, si crees necesario puedes contribuir en GitHub.
 #### Desinstalación
 
 Se debe realizar lo mismo que en la instalación, pero en vez de ejecutar `installer.ps1` se debe ejecutar `uninstaller.ps1`. En este caso no importa desde qué directorio se ejecute.
+
+## Compilación
+
+Debido a que, por simplicidad y agilidad, se usó la herramienta de diseño de IntelliJ, la aplicación se debe compilar
+desde IntelliJ (se debe construir el artefacto, la configuración ya está incluida en [`.idea`](.idea))
+
+Después de obtener el `jar` se debe empaquetar con jpackage usando ya sea la configuración [`app-image.jpack`](app-image.jpack)
+o [`exe.jpack`](exe.jpack) (`jpackage @exe.jpack`)
